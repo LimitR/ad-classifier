@@ -1,6 +1,6 @@
 {
   "name": "ad-classifier",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lib for classifer word",
   "main": "main.js",
   "scripts": {
