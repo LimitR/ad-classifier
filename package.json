@@ -4,9 +4,20 @@
   "description": "Lib for classifer word",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
   },
   "author": "LimitR",
   "license": "ISC",
-  "directories": {}
+  "directories": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LimitR/ad-classifier.git"
+  },
+  "keywords": [
+    "naive", "bayes", "categorize", "classify", "classifier", "classification", "machine learning"
+  ],
+  "bugs": {
+    "url": "https://github.com/LimitR/ad-classifier/issues"
+  },
+  "homepage": "https://github.com/LimitR/ad-classifier#readme"
 }
