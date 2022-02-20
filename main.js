@@ -29,4 +29,22 @@ module.exports = class Classifer {
             this.#ad.learn(token, word);
         }
     }
+
+    /**
+     * @param {Object[]} model Array with params
+     * @param {string} model[].token Token for learn
+     * @param {string} model[].word Word for learn
+     */
+    unLearn(model){
+        for(const {token, word} of model){
+            this.#ad.unLearn(token, word);
+        }
+    }
+
+    /**
+     * @param {string} profileName Profile name
+     */
+    dropProfile(profileName){
+        this.#ad.dropProfile(profileName);
+    }
 }
