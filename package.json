@@ -1,6 +1,6 @@
 {
   "name": "ad-classifier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lib for classifer word",
   "main": "main.js",
   "scripts": {
@@ -14,7 +14,13 @@
     "url": "git+https://github.com/LimitR/ad-classifier.git"
   },
   "keywords": [
-    "naive", "bayes", "categorize", "classify", "classifier", "classification", "machine learning"
+    "naive",
+    "bayes",
+    "categorize",
+    "classify",
+    "classifier",
+    "classification",
+    "machine learning"
   ],
   "bugs": {
     "url": "https://github.com/LimitR/ad-classifier/issues"
