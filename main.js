@@ -7,7 +7,7 @@ module.exports = class Classifer {
      * @param {string} profile Profile libs
      */
     constructor(profile){
-        this.#ad = require('lib/napi.win32-x64-msvc.node');
+        this.#ad = require('./libs/napi.win32-x64-msvc.node');
         this.#ad.profile(profile);
     }
 
