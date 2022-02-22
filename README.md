@@ -29,3 +29,8 @@ instans.dropProfile("profile_1")
 ```javascript
 instans.unLearn([{ token: "Cat", word: "Purring and sleeping" }])
 ```
+
+Для удаления токена и всех записей, воспользуйтесь методом **.remove()**
+```javascript
+instans.remove("Cat")
+```

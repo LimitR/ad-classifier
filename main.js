@@ -47,4 +47,11 @@ module.exports = class Classifer {
     dropProfile(profileName){
         this.#ad.dropProfile(profileName);
     }
+
+    /**
+     * @param {string} string Token for remove
+     */
+    remove(string){
+        this.#ad.removeToken(string)
+    }
 }
