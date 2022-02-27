@@ -8,7 +8,12 @@ module.exports = class Classifer {
      */
     constructor(profile){
         this.#ad = require('./libs/napi.win32-x64-msvc.node');
-        this.#ad.profile(profile);
+        if(!profile){
+            this.#ad.profile('default');
+        }else{
+            this.#ad.profile(profile);
+        }
+        
     }
 
     /**
@@ -28,17 +33,20 @@ module.exports = class Classifer {
         for(const {token, word} of model){
             this.#ad.learn(token, word);
         }
+        this.#ad.save()
     }
 
     /**
      * @param {Object[]} model Array with params
      * @param {string} model[].token Token for learn
      * @param {string} model[].word Word for learn
+     * @description Unstable
      */
     unLearn(model){
         for(const {token, word} of model){
             this.#ad.unLearn(token, word);
         }
+        this.#ad.save()
     }
 
     /**
