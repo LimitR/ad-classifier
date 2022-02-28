@@ -13,7 +13,7 @@ module.exports = class Classifer {
         }else{
             this.#ad.profile(profile);
         }
-        
+        this.#ad.run();
     }
 
     /**
@@ -33,20 +33,37 @@ module.exports = class Classifer {
         for(const {token, word} of model){
             this.#ad.learn(token, word);
         }
-        this.#ad.save()
+        this.#ad.save();
+    }
+
+    /**
+     * @param {string} token Token for learn
+     * @param {string} word Word for learn
+     */
+    learnOne(token, word){
+        this.#ad.learn(token, word);
+        this.#ad.save();
     }
 
     /**
      * @param {Object[]} model Array with params
-     * @param {string} model[].token Token for learn
-     * @param {string} model[].word Word for learn
-     * @description Unstable
+     * @param {string} model[].token Token for unlearn
+     * @param {string} model[].word Word for unlearn
      */
     unLearn(model){
         for(const {token, word} of model){
             this.#ad.unLearn(token, word);
         }
-        this.#ad.save()
+        this.#ad.save();
+    }
+
+    /**
+     * @param {string} token Token for unlearn
+     * @param {string} word Word for unlearn
+     */
+    unLearnOne(token, word){
+        this.#ad.unLearn(token, word);
+        this.#ad.save();
     }
 
     /**
@@ -60,6 +77,6 @@ module.exports = class Classifer {
      * @param {string} string Token for remove
      */
     remove(string){
-        this.#ad.removeToken(string)
+        this.#ad.removeToken(string);
     }
 }

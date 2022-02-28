@@ -1,5 +1,5 @@
 # Naive classifier bayesian with sqlite
-## Use libs
+## Usage
 
 ```powershell
 npm i ad-classifier
@@ -8,29 +8,32 @@ npm i ad-classifier
 const Classifer = require("ad-classifier");
 const instans = new Classifer("profile_1")
 ```
-Для запуска нужно указать профиль , при создании инстанса класса, иначе будет использоваться дефолтный.
+To create an instance of a class, you can choose a profile name and point from constructor or just leave it blank. Then it will be used default profile.
 
-Для "обучения", нужно воспользоваться методом **.learn()**
+For teach a classify, you can used to methods: **.learn()** or **.learnOne()**
 ```javascript
 instans.learn([
     { token: "Dog", word: "Barks and bites" },
     { token: "Cat", word: "Purring and sleeping" },
     ]);
+
+instans.learnOne("Dog", "Barks and bites");
 ```
-Для получения результата классификатора, нужно вызвать метод **.classify()**
+For take result a classifying, you can used method: **.classify()**
 ```javascript
 instans.classify("Just eating and sleeping") // "Cat"
 ```
-Для удаления профиля, воспользуйтесь методом **.dropProfile()**
+For remove profile, you can used method: **.dropProfile()**
 ```javascript
 instans.dropProfile("profile_1")
 ```
-Для удаления неверных данных из памяти, нужно воспользоваться методом **.unLearn()**
+For removed a wrong data in classify, you can used methods: **.unLearn()** or **.unLearnOne()**
 ```javascript
 instans.unLearn([{ token: "Cat", word: "Purring and sleeping" }])
+instans.unLearnOne("Cat", "Purring and sleeping")
 ```
 
-Для удаления токена и всех записей, воспользуйтесь методом **.remove()**
+For remove token and all data with it, you can used method: **.remove()**
 ```javascript
 instans.remove("Cat")
 ```
